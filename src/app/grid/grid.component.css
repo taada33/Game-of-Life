@@ -1,7 +1,7 @@
 .grid{
     position: absolute;
     top: 10%;
-    left: 31%;
+    left: 30.5%;
     border-right: 1px solid black;
     border-top: 1px solid black;
 }
@@ -25,4 +25,26 @@
 
 .alive{
     background-color: lightgreen;
+}
+
+.alive:hover{
+    background-color: color-mix(in oklab, lightgreen, white);
+}
+
+button{
+    display: inline;
+    margin: 10px;
+    padding:10px;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+button:active{
+    background-color: lightgrey;
+}
+
+.controls{
+    position: absolute;
+    top: 93%;
+    left: 45%;
 }
