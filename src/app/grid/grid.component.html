@@ -1,0 +1,11 @@
+<div class="grid">
+    <div class="row" *ngFor="let row of grid">
+        <div #element class="cell" 
+        *ngFor="let cell of row"
+        (click)="alterCell(cell)"
+        [ngClass]="{'alive' : cell}" 
+        >
+
+        </div>
+    </div>
+</div>

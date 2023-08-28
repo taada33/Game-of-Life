@@ -1,0 +1,28 @@
+.grid{
+    position: absolute;
+    top: 10%;
+    left: 31%;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.row{
+    display: flex;
+}
+
+.cell{
+    display: inline-block;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width:75px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.cell:hover{
+    background-color: lightgrey;
+}
+
+.alive{
+    background-color: lightgreen;
+}
