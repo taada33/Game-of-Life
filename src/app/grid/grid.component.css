@@ -37,14 +37,19 @@ button{
     padding:10px;
     background-color: lightgreen;
     cursor: pointer;
+    width: 100px;
 }
 
 button:active{
     background-color: lightgrey;
 }
 
+button:disabled{
+    background-color: lightgrey;
+}
+
 .controls{
     position: absolute;
     top: 93%;
-    left: 45%;
+    left: 41%;
 }

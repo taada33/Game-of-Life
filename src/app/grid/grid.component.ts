@@ -63,33 +63,38 @@ export class GridComponent {
             let lastRow = i-1;
             let nextRow = i+1;
     
-            if(lastCol < 0){
-              lastCol = this.grid.length-1;
+            if(lastRow >= 0){
+              total+= this.grid[lastRow][j];
             }
-    
-            if(lastRow < 0){
-              lastRow = this.grid.length-1;
+
+            if(lastRow >= 0 && nextCol <= this.grid.length-1){
+              total+= this.grid[lastRow][nextCol];
             }
-    
-            if(nextCol > this.grid.length-1){
-              nextCol = 0;
+
+            if(lastRow >= 0 && lastCol >= 0){
+              total+= this.grid[lastRow][lastCol];
             }
-    
-            if(nextRow > this.grid.length-1){
-              nextRow = 0;
+
+            if(lastCol >= 0){
+              total+= this.grid[i][lastCol];
+            }
+
+            if(nextRow <= this.grid.length-1 && lastCol >= 0){
+              total+= this.grid[nextRow][lastCol];
+            }
+
+            if(nextRow <= this.grid.length-1){
+              total+= this.grid[nextRow][j];
+            }
+
+            if(nextRow <= this.grid.length-1 && nextCol <= this.grid.length-1){
+              total+= this.grid[nextRow][nextCol];
+            }
+
+            if(nextCol <= this.grid.length-1){
+              total+= this.grid[i][nextCol];
             }
   
-            // console.log(`lastRow = ${lastRow}, lastCol = ${lastCol} nextRow = ${nextRow}, nextCol = ${nextCol}`)
-    
-            total+= this.grid[lastRow][j];
-            total+= this.grid[lastRow][nextCol];
-            total+= this.grid[lastRow][lastCol];
-            total+= this.grid[i][lastCol];
-            total+= this.grid[nextRow][lastCol];
-            total+= this.grid[nextRow][nextCol];
-            total+= this.grid[nextRow][j];
-            total+= this.grid[i][nextCol];
-    
             if(total === 2 || total === 3){
               nextGrid[i][j] = 1;
             }else{
@@ -106,18 +111,11 @@ export class GridComponent {
           },0)
         },0)
   
-        console.log(gridTotal);
-  
-  
         if(!gridTotal){
           this.started = false;
           clearInterval(this.running);
         }
     },100);
-
-
-
-
   }
 
   stopGame(): void{
