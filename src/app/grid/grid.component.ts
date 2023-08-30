@@ -95,7 +95,9 @@ export class GridComponent {
               total+= this.grid[i][nextCol];
             }
   
-            if(total === 2 || total === 3){
+            if(this.grid[i][j] === 1 && (total === 2 || total === 3)){
+              nextGrid[i][j] = 1;
+            }else if(this.grid[i][j] === 0 && total === 3){
               nextGrid[i][j] = 1;
             }else{
               nextGrid[i][j] = 0;
