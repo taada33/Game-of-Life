@@ -8,6 +8,8 @@
     </div>
 </div>
 <div class="controls">
-    <button (click)="randomize()">Randomize</button>
-    <button (click)="startGame()">Start</button>
+    <button [disabled]="started" (click)="randomize()">Randomize</button>
+    <button [disabled]="started" (click)="clearCells()">Clear</button>
+    <button *ngIf="!started" (click)="startGame()">Start</button>
+    <button *ngIf="started" (click)="stopGame()">Stop</button>
 </div>
